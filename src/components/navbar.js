@@ -84,6 +84,16 @@ export const Navbar = () => {
                 </li>
               </div>
             )}
+
+
+<li className="nav-item nav-t">
+              <a className="nav-link" href="/AttendaceTable">
+                Attendance
+              </a>
+            </li>
+
+
+
             <li className="nav-item nav-t">
               <a className="nav-link" href="/contactform">
                 Help Desk

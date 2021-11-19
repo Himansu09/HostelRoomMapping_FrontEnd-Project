@@ -22,6 +22,10 @@ import UpdateStatusForm from "./Admin/UpdateStatusForm";
 import StatusBooking from "./Student/StatusBooking";
 import Navbar from "./components/navbar";
 
+import AttendanceTable from "./Attendance/AttendanceTable";
+import AddAtendace from "./Attendance/AddAtendance";
+import UpdateAttendance from "./Attendance/UpdateAttendance";
+
 function App() {
   return (
     <Router>
@@ -50,6 +54,9 @@ function App() {
             <Route path="/statuspage" component={StatusPage} />
             <Route path="/updatestatusform/:id" component={UpdateStatusForm} />
             <Route path="/statusbooking/:id" component={StatusBooking} />
+            <Route exact path="/AttendaceTable" component={AttendanceTable} />
+        <Route exact path="/AddAtendace" component={AddAtendace} />
+        <Route exact path="/updateattendace/:id" component={UpdateAttendance} />
           </Switch>
         </div>
 
