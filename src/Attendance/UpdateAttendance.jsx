@@ -134,9 +134,7 @@ export default class UpdateAttendance extends Component {
                 </button>
 
                 <button
-                  className="btn-center"
-                  variant="primary"
-                  type="submit"
+                 className="btn btn-primary ms-2"                  
                   onClick={this.cancel.bind(this)}
                 >
                   Cancel

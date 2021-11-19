@@ -154,7 +154,7 @@ export default class BookingForm extends Component {
                       type="text"
                       value={this.state.typeOfHostel}
                       onChange={this.changeTypeOfHostelHandler}
-                      defaultValue="Choose..."
+                      defaultValue=" "
                     >
                       <option>Choose..</option>
                       <option>AC</option>

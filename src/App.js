@@ -11,7 +11,6 @@ import Bookingform from "./Student/BookingForm";
 import Mappingtable from "./Admin/mappingtable";
 import Contactform from "./components/contactform";
 import UpdateStudent from "./Admin/UpdateStudent";
-import Service from "./components/Service";
 import AdminPage from "./Admin/AdminPage";
 import StudentPage from "./Student/StudentPage";
 import StatusTable from "./Student/StatusTable";
@@ -21,7 +20,8 @@ import StatusPage from "./Admin/StatusPage";
 import UpdateStatusForm from "./Admin/UpdateStatusForm";
 import StatusBooking from "./Student/StatusBooking";
 import Navbar from "./components/navbar";
-
+import CreateComponent from "./mess/CreateComponent";
+import ListMessComponent from "./mess/ListMessComponent";
 import AttendanceTable from "./Attendance/AttendanceTable";
 import AddAtendace from "./Attendance/AddAtendance";
 import UpdateAttendance from "./Attendance/UpdateAttendance";
@@ -45,7 +45,6 @@ function App() {
             <Route path="/mappingtable" component={Mappingtable} />
             <Route path="/contactform" component={Contactform} />
             <Route path="/updatestudent/:id" component={UpdateStudent} />
-            <Route path="/service" component={Service} />
             <Route path="/adminpage" component={AdminPage} />
             <Route path="/studentpage" component={StudentPage} />
             <Route path="/statustable" component={StatusTable} />
@@ -55,16 +54,23 @@ function App() {
             <Route path="/updatestatusform/:id" component={UpdateStatusForm} />
             <Route path="/statusbooking/:id" component={StatusBooking} />
             <Route exact path="/AttendaceTable" component={AttendanceTable} />
-        <Route exact path="/AddAtendace" component={AddAtendace} />
-        <Route exact path="/updateattendace/:id" component={UpdateAttendance} />
+            <Route exact path="/AddAtendace" component={AddAtendace} />
+            <Route
+              exact
+              path="/updateattendace/:id"
+              component={UpdateAttendance}
+            />
+            <Route exact path="/messtable" component={ListMessComponent} />
+            <Route
+              exact
+              path="/updatemesstable/:id"
+              component={CreateComponent}
+            />
           </Switch>
         </div>
-
-        {/* <AuthVerify logOut={logOut}/> */}
       </div>
     </Router>
   );
 }
-// fgjg
 
 export default App;

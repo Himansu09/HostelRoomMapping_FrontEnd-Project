@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
 import StudentService from "../services/StudentService";
+import Backi from "../image/back.png";
 
 export default class AttendanceTable extends Component {
   constructor(props) {
@@ -37,10 +38,21 @@ export default class AttendanceTable extends Component {
   addAttendance() {
     this.props.history.push("/AddAtendace");
   }
+   cancel() {
+    this.props.history.push("/adminpage");
+  }
   
   render() {
     return (
       <>
+      <a
+            class="btn-c"
+            href="#"
+            role="button"
+            onClick={this.cancel.bind(this)}
+          >
+            <img src={Backi} class="rounded btn-c float-start" alt="..."></img>
+          </a>
         <div className=" container shadow-lg mt-5 table-data bg-light">
           <h2 className="text-center"> ATTENDANCE</h2>          
           <button
@@ -49,7 +61,7 @@ export default class AttendanceTable extends Component {
             className="btn btn-primary mb-3"
             onClick={this.addAttendance}
           >
-            ADD ATTENDANCE
+            ATTENDANCE
           </button>
           </div>
         <div className="container shadow-lg mt-5 table-data bg-light">

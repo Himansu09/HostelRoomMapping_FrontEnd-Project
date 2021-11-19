@@ -77,7 +77,7 @@ export default class addAtendance extends Component {
             <div className="card-body">
               <Form striped bordered hover variant="light">
                 <Row className="mb-3">
-                    <Form.Group controlId="formGridZip">
+                    <Form.Group controlId="formGridState">
                       <Form.Label>
                         Mark Status
                       </Form.Label>
@@ -86,13 +86,14 @@ export default class addAtendance extends Component {
                         type="text"
                         value={this.state.attend}
                         onChange={this.changeAttendHandler}
+                         defaultValue=" "
                       >
                         <option>Choose..</option>
                         <option>Present</option>
                         <option>Absent</option>                        
                         </Form.Select>
                     </Form.Group>
-                    <Form.Group controlId="formGridZip">
+                    <Form.Group controlId="formGridState">
                       <Form.Label>
                         Hostel Type
                       </Form.Label>
