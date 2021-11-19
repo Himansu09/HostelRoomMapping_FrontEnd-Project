@@ -9,20 +9,21 @@ export default class BookingForm extends Component {
     this.state = {
       // step 2
       id: this.props.match.params.id,
-      name: '',
-      phoneNo: '',
-      email: '',
-      roomNo: '',
-      typeOfHostel: '',
-      registrationNo: ''
-    }
-    
+      name: "",
+      phoneNo: "",
+      email: "",
+      roomNo: "",
+      typeOfHostel: "",
+      registrationNo: "",
+    };
+
     this.changeNameHandler = this.changeNameHandler.bind(this);
     this.changePhoneNoHandler = this.changePhoneNoHandler.bind(this);
     this.changeEmailHandler = this.changeEmailHandler.bind(this);
     this.changeRoomNoHandler = this.changeRoomNoHandler.bind(this);
     this.changeTypeOfHostelHandler = this.changeTypeOfHostelHandler.bind(this);
-    this.changeRegistrationNoHandler =this.changeRegistrationNoHandler.bind(this);
+    this.changeRegistrationNoHandler =
+      this.changeRegistrationNoHandler.bind(this);
     this.saveHostel = this.saveHostel.bind(this);
   }
 
@@ -36,7 +37,6 @@ export default class BookingForm extends Component {
     });
   }
 
-
   saveHostel = (e) => {
     e.preventDefault();
     let hostel = {
@@ -45,7 +45,7 @@ export default class BookingForm extends Component {
       email: this.state.email,
       roomNo: this.state.roomNo,
       typeOfHostel: this.state.typeOfHostel,
-      registrationNo: this.state.registrationNo
+      registrationNo: this.state.registrationNo,
     };
     console.log("hostel => " + JSON.stringify(hostel));
 
@@ -53,7 +53,6 @@ export default class BookingForm extends Component {
       this.props.history.push("/studentpage");
     });
   };
-
 
   changeNameHandler = (event) => {
     this.setState({ name: event.target.value });
@@ -90,24 +89,32 @@ export default class BookingForm extends Component {
           <div className="card col-md-6 offset-md-3 offset-md-3 shadow-lg rounded">
             <h3 className="text-center text mt-2">Booking Here</h3>
             <div className="card-body">
-              <Form striped bordered hover variant="light">
+              <Form
+                striped
+                bordered
+                hover
+                variant="light"
+                className="needs-validation"
+                novalidate
+              >
                 <Row className="mb-3">
                   <Form.Group controlId="formGridZip">
-                    <Form.Label>
+                    <label for="validationCustom01" class="form-label">
                       Enter Your Name
-                    </Form.Label>
-                    
-                    <Form.Control
+                    </label>
+                    <input
                       type="text"
+                      class="form-control"
+                      id="validationCustom01"
                       value={this.state.name}
                       onChange={this.changeNameHandler}
+                      required
                     />
+                    <div class="invalid-feedback">Please enter your name!</div>
                   </Form.Group>
                   <Form.Group controlId="formGridZip">
-                    <Form.Label>
-                      Enter Your Registration No.
-                    </Form.Label>
-                   
+                    <Form.Label>Enter Your Registration No.</Form.Label>
+
                     <Form.Control
                       type="number"
                       value={this.state.registrationNo}
@@ -115,10 +122,8 @@ export default class BookingForm extends Component {
                     />
                   </Form.Group>
                   <Form.Group controlId="formGridZip">
-                    <Form.Label>
-                      Enter Your Mail
-                    </Form.Label>
-                   
+                    <Form.Label>Enter Your Mail</Form.Label>
+
                     <Form.Control
                       type="email"
                       value={this.state.email}
@@ -126,10 +131,8 @@ export default class BookingForm extends Component {
                     />
                   </Form.Group>
                   <Form.Group controlId="formGridZip">
-                    <Form.Label>
-                      Enter contact No.
-                    </Form.Label>
-                   
+                    <Form.Label>Enter contact No.</Form.Label>
+
                     <Form.Control
                       type="number"
                       value={this.state.phoneNo}
@@ -137,10 +140,8 @@ export default class BookingForm extends Component {
                     />
                   </Form.Group>
                   <Form.Group controlId="formGridZip">
-                    <Form.Label>
-                      Enter Room No.
-                    </Form.Label>
-                    
+                    <Form.Label>Enter Room No.</Form.Label>
+
                     <Form.Control
                       type="number"
                       value={this.state.roomNo}
@@ -148,28 +149,16 @@ export default class BookingForm extends Component {
                     />
                   </Form.Group>
                   <Form.Group controlId="formGridState">
-                    <Form.Label>
-                      Select Hostel
-                    </Form.Label>
+                    <Form.Label>Select Hostel</Form.Label>
                     <Form.Select
                       type="text"
                       value={this.state.typeOfHostel}
                       onChange={this.changeTypeOfHostelHandler}
                       defaultValue="Choose..."
                     >
-                       <option
-                      >
-                        Choose..
-                      </option>
-                      <option
-                      
-                      >
-                        AC
-                      </option>
-                      <option 
-                      >
-                        NON-AC
-                      </option>
+                      <option>Choose..</option>
+                      <option>AC</option>
+                      <option>NON-AC</option>
                     </Form.Select>
                   </Form.Group>
                 </Row>
@@ -181,12 +170,15 @@ export default class BookingForm extends Component {
                 >
                   Submit
                 </Button>
-                 <Button
+                <Button
                   className="btn-center"
                   variant="primary"
                   type="submit"
                   onClick={this.cancel.bind(this)}
-                > Cancel</Button>
+                >
+                  {" "}
+                  Cancel
+                </Button>
               </Form>
             </div>
           </div>
