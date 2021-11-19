@@ -11,7 +11,7 @@ const AdminPage = ({ component: roles }) => {
     return (
       <>
         <div>
-          <a class="btn-c" href="/" role="button">
+          <a class="btn-c" href="/login" role="button">
             <img src={Backi} class="rounded btn-c float-start" alt="..."></img>
           </a>
         </div>

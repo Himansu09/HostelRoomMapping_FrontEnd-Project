@@ -53,19 +53,18 @@ export default class AttendanceTable extends Component {
           >
             <img src={Backi} class="rounded btn-c float-start" alt="..."></img>
           </a>
-        <div className=" container shadow-lg mt-5 table-data bg-light">
-          <h2 className="text-center"> ATTENDANCE</h2>          
+        <div className=" container  mt-5 ">                    
           <button
             type="button"
             style={{ marginLeft: "980px" }}
-            className="btn btn-primary mb-3"
+            className="btn btn-primary"
             onClick={this.addAttendance}
           >
             ATTENDANCE
           </button>
           </div>
         <div className="container shadow-lg mt-5 table-data bg-light">
-          <h1 className="text-center">Hostel Status</h1>
+          <h1 className="text-center">ATTENDANCE TABLE</h1>
           <Table striped bordered hover variant="light">
             <thead>
               <tr>

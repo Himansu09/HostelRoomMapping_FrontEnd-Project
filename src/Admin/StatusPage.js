@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import Backi from "../image/back.png";
 
 export default class StatusPage extends Component {
-
-     cancel() {
-    this.props.history.push("/service");
+  cancel() {
+    this.props.history.push("/adminpage");
   }
 
-    render() {
-        return (
-            <>
+  render() {
+    return (
+      <>
         <div>
           <a
             class="btn-c"
@@ -26,11 +25,8 @@ export default class StatusPage extends Component {
               <div className="card">
                 <div className="card-body shadow-lg">
                   <h5 className="card-title">GIVE STATUS</h5>
-                  <p className="card-text">
-                    Here admin can give hostel status
-                  </p>
+                  <p className="card-text">Here admin can give hostel status</p>
                   <a href="/statusform" className="btn btn-primary">
-                    
                     Give Status
                   </a>
                 </div>
@@ -50,6 +46,6 @@ export default class StatusPage extends Component {
           </div>
         </div>
       </>
-        )
-    }
+    );
+  }
 }

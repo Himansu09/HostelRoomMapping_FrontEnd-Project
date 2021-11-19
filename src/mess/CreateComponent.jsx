@@ -51,11 +51,11 @@ class CreateComponent extends Component {
         // step 5
         if(this.state.id === '_add'){
             MessService.createMess(student).then(res =>{
-                this.props.history.push('/mess');
+                this.props.history.push('/messtable');
             });
         }else{
             MessService.updateMess(student, this.state.id).then( res => {
-                this.props.history.push('/mess');
+                this.props.history.push('/messtable');
             });
         }
     }

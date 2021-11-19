@@ -1,11 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Profile from "./components/Profile";
-import EventBus from "./common/EventBus";
 import Cardbody from "./components/cardbody";
 import Bookingform from "./Student/BookingForm";
 import Mappingtable from "./Admin/mappingtable";
@@ -25,6 +24,7 @@ import ListMessComponent from "./mess/ListMessComponent";
 import AttendanceTable from "./Attendance/AttendanceTable";
 import AddAtendace from "./Attendance/AddAtendance";
 import UpdateAttendance from "./Attendance/UpdateAttendance";
+import MessTable from "./mess/MessTable";
 
 function App() {
   return (
@@ -66,6 +66,7 @@ function App() {
               path="/updatemesstable/:id"
               component={CreateComponent}
             />
+            <Route exact path="/messtablestudent" component={MessTable} />
           </Switch>
         </div>
       </div>

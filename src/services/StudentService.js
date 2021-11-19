@@ -37,26 +37,28 @@ class StudentService {
 
   getAttendance() {
     return axios.get(URL_ATT, { headers: authHeader() });
-}
+  }
 
-createAttendance(attendance) {
+  createAttendance(attendance) {
     return axios.post(URL_ATT, attendance, { headers: authHeader() });
-}
-createAttendance(attendance) {
+  }
+  createAttendance(attendance) {
     return axios.post(URL_ATT, attendance, { headers: authHeader() });
-}
-getAttendanceById(attendanceId) {
-    return axios.get(URL_ATT + '/' + attendanceId, { headers: authHeader() });
-}
+  }
+  getAttendanceById(attendanceId) {
+    return axios.get(URL_ATT + "/" + attendanceId, { headers: authHeader() });
+  }
 
-updateAttendance(attendance, attendanceId) {
-    return axios.put(URL_ATT + '/' + attendanceId, attendance, { headers: authHeader() });
-
-}
-deleteAttendance(attendanceId) {
-    return axios.delete(URL_ATT + '/' + attendanceId, { headers: authHeader() });
-}
-
+  updateAttendance(attendance, attendanceId) {
+    return axios.put(URL_ATT + "/" + attendanceId, attendance, {
+      headers: authHeader(),
+    });
+  }
+  deleteAttendance(attendanceId) {
+    return axios.delete(URL_ATT + "/" + attendanceId, {
+      headers: authHeader(),
+    });
+  }
 }
 
 export default new StudentService();

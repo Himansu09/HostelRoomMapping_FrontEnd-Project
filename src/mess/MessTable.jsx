@@ -1,23 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import MessService from '../services/MessService';
 import Backi from "../image/back.png";
 
-class ListMessComponent extends Component {
-    constructor(props){
+export class MessTable extends Component {
+
+
+     constructor(props){
         super(props)
 
         this.state = {
                 studentdetails: []
         }
-        this.editStudent = this.editStudent.bind(this);
-        
-    }
-    
-   
- 
-    
-    editStudent(id){
-        this.props.history.push(`/updatemesstable/${id}`);
+
+
     }
 
     componentDidMount(){
@@ -27,13 +22,9 @@ class ListMessComponent extends Component {
     }
 
 
-    cancel() {
-    this.props.history.push("/adminpage");
+     cancel() {
+    this.props.history.push("/studentpage");
   }
-   
-
-    
-
     render() {
         return (
             <>
@@ -76,7 +67,7 @@ class ListMessComponent extends Component {
                                         <td> {student.snack} </td>
                                         <td> {student.dinner} </td>
                                         <td>
-                                                 <button onClick={ () => this.editStudent(student.id)} className="btn btn-primary">Update </button>
+                                                 
                                                  
                                                  
                                              </td>
@@ -93,8 +84,8 @@ class ListMessComponent extends Component {
 
             </div>
             </>
-        );
+        )
     }
 }
 
-export default ListMessComponent;
+export default MessTable;

@@ -82,22 +82,28 @@ export default class addAtendance extends Component {
                         Mark Status
                       </Form.Label>
                       
-                      <Form.Control
-                        type="text"
-                        value={this.state.attend}
-                        onChange={this.changeAttendHandler}
-                      />
+                      <Form.Select
+                      type="text"
+                      value={this.state.attend}
+                      onChange={this.changeAttendHandler}
+                    >
+                      <option>Present</option>
+                      <option>Absent</option>
+                      </Form.Select>
                     </Form.Group>
                     <Form.Group controlId="formGridZip">
                       <Form.Label>
                         Hostel Type
                       </Form.Label>
                     
-                      <Form.Control
-                        type="text"
-                        value={this.state.hostelType}
-                        onChange={this.changeHostelTypeHandler}
-                      />
+                      <Form.Select
+                      type="text"
+                      value={this.state.hostelType}
+                      onChange={this.changeHostelTypeHandler}
+                    >
+                      <option>AC</option>
+                      <option>NON-AC</option>
+                      </Form.Select>
                     </Form.Group>
                     <Form.Group controlId="formGridZip">
                       <Form.Label>

@@ -84,20 +84,26 @@ export default class UpdateAttendance extends Component {
                   <Form.Group controlId="formGridZip">
                     <Form.Label>Mark Status</Form.Label>
 
-                    <Form.Control
+                    <Form.Select
                       type="text"
                       value={this.state.attend}
                       onChange={this.changeAttendHandler}
-                    />
+                    >
+                      <option>Present</option>
+                      <option>Absent</option>
+                      </Form.Select>
                   </Form.Group>
                   <Form.Group controlId="formGridZip">
                     <Form.Label>Hostel Type</Form.Label>
 
-                    <Form.Control
+                    <Form.Select
                       type="text"
                       value={this.state.hostelType}
                       onChange={this.changeHostelTypeHandler}
-                    />
+                    >
+                      <option>AC</option>
+                      <option>NON-AC</option>
+                      </Form.Select>
                   </Form.Group>
                   <Form.Group controlId="formGridZip">
                     <Form.Label>Enter Student Name</Form.Label>
