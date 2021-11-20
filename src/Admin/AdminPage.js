@@ -60,6 +60,19 @@ const AdminPage = ({ component: roles }) => {
             <div className="col-sm-6 mt-4">
               <div className="card">
                 <div className="card-body shadow-lg">
+                  <h5 className="card-title">HELP DESK TABLE</h5>
+                  <p className="card-text">
+                    Here admin see problems of student
+                  </p>
+                  <a href="/helpdesktable" className="btn btn-primary">
+                    Helpdesk
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="col-sm-6 mt-4">
+              <div className="card">
+                <div className="card-body shadow-lg">
                   <h5 className="card-title">CANTEEN STATUS</h5>
                   <p className="card-text">
                     Here admin give and edit Canteen status

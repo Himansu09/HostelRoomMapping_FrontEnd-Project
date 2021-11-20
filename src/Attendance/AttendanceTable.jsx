@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
-import StudentService from "../services/StudentService";
+import Service from "../services/Service";
 import Backi from "../image/back.png";
 
 export default class AttendanceTable extends Component {
@@ -18,7 +18,7 @@ export default class AttendanceTable extends Component {
   }
 
   deleteAttendance(id) {
-    StudentService.deleteAttendance(id).then((res) => {
+    Service.deleteAttendance(id).then((res) => {
       this.setState({
         atten_data: this.state.atten_data.filter(
           (attendance) => attendance.id !== id
@@ -31,7 +31,7 @@ export default class AttendanceTable extends Component {
   }
   
   componentDidMount() {
-    StudentService.getAttendance().then((res) => {
+    Service.getAttendance().then((res) => {
       this.setState({ atten_data: res.data });
     });
   }
@@ -73,6 +73,7 @@ export default class AttendanceTable extends Component {
                 <th>Registration No</th>
                 <th>Status</th>
                 <th>Hostel Type</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>

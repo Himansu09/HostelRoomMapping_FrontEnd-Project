@@ -59,6 +59,7 @@ export default class StatusTable extends Component {
                 <th>Available Bed</th>
                 <th>Features</th>
                 <th>Hostel Type</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>

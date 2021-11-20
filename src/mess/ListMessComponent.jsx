@@ -61,6 +61,7 @@ class ListMessComponent extends Component {
                                 <th>Lunch</th>
                                 <th>Snack</th>
                                 <th>Dinner</th>
+                                <th>Action</th>
                                 
                             </tr>
                         </thead>

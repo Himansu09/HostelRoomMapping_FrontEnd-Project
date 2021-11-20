@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import StudentService from '../services/StudentService';
+import Service from '../services/Service';
 import { Form, Row, Button } from "react-bootstrap";
 
 export default class addAtendance extends Component {
@@ -36,7 +36,7 @@ export default class addAtendance extends Component {
           regdno:this.state.regdno }
         console.log('attendance =>' + JSON.stringify(attendance));
     
-        StudentService.createAttendance(attendance).then(res =>{
+        Service.createAttendance(attendance).then(res =>{
           this.props.history.push('/AttendaceTable');
         });
     
@@ -87,6 +87,7 @@ export default class addAtendance extends Component {
                       value={this.state.attend}
                       onChange={this.changeAttendHandler}
                     >
+                      <option>Choose..</option>
                       <option>Present</option>
                       <option>Absent</option>
                       </Form.Select>
@@ -101,6 +102,7 @@ export default class addAtendance extends Component {
                       value={this.state.hostelType}
                       onChange={this.changeHostelTypeHandler}
                     >
+                      <option>Choose..</option>
                       <option>AC</option>
                       <option>NON-AC</option>
                       </Form.Select>

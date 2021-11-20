@@ -4,38 +4,35 @@ import { Table } from "react-bootstrap";
 import StatusService from "../services/StatusService";
 
 export default class AdminStatusTable extends Component {
-
-    constructor(props) {
+  constructor(props) {
     super(props);
 
     this.state = {
-      hostelStatus : []
+      hostelStatus: [],
     };
     this.editHostelStatus = this.editHostelStatus.bind(this);
     this.deleteHostelStatus = this.deleteHostelStatus.bind(this);
-    
   }
 
   deleteHostelStatus(id) {
-    StatusService.deleteHostelStatus(id).then((res) =>{
+    StatusService.deleteHostelStatus(id).then((res) => {
       this.setState({
         hostelStatus: this.state.hostelStatus.filter(
           (hostelStatus) => hostelStatus.id !== id
-        )
-      })
-    })
-  }
-
-  editHostelStatus(id){
-    this.props.history.push(`/updatestatusform/${id}`)
-  }
-
-  componentDidMount() {
-    StatusService.getHostelStatus().then((res) =>{
-      this.setState({ hostelStatus: res.data});
+        ),
+      });
     });
   }
 
+  editHostelStatus(id) {
+    this.props.history.push(`/updatestatusform/${id}`);
+  }
+
+  componentDidMount() {
+    StatusService.getHostelStatus().then((res) => {
+      this.setState({ hostelStatus: res.data });
+    });
+  }
 
   cancel() {
     this.props.history.push("/statuspage");
@@ -68,6 +65,7 @@ export default class AdminStatusTable extends Component {
                   <th>Available Bed</th>
                   <th>Features</th>
                   <th>Hostel Type</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>

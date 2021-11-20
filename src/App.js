@@ -8,7 +8,6 @@ import Profile from "./components/Profile";
 import Cardbody from "./components/cardbody";
 import Bookingform from "./Student/BookingForm";
 import Mappingtable from "./Admin/mappingtable";
-import Contactform from "./components/contactform";
 import UpdateStudent from "./Admin/UpdateStudent";
 import AdminPage from "./Admin/AdminPage";
 import StudentPage from "./Student/StudentPage";
@@ -25,6 +24,9 @@ import AttendanceTable from "./Attendance/AttendanceTable";
 import AddAtendace from "./Attendance/AddAtendance";
 import UpdateAttendance from "./Attendance/UpdateAttendance";
 import MessTable from "./mess/MessTable";
+import Contactform from "./helpdesk/contactform";
+import HelpdeskTable from "./helpdesk/HelpdeskTable";
+import Successful from "./helpdesk/Successful";
 
 function App() {
   return (
@@ -67,6 +69,8 @@ function App() {
               component={CreateComponent}
             />
             <Route exact path="/messtablestudent" component={MessTable} />
+            <Route exact path="/helpdesktable" component={HelpdeskTable} />
+            <Route exact path="/success" component={Successful} />
           </Switch>
         </div>
       </div>

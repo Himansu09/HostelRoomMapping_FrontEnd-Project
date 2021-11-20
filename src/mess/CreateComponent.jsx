@@ -82,7 +82,7 @@ class CreateComponent extends Component {
 
    
     cancel(){
-        this.props.history.push('/mess');
+        this.props.history.push('/messtable');
     }
 
     

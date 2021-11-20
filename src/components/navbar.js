@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { history } from "../helpers/history";
 import EventBus from "../common/EventBus";
 import { logout } from "../actions/auth";

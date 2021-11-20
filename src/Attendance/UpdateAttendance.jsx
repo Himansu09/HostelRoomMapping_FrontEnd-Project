@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import StudentService from "../services/StudentService";
+import Service from "../services/Service";
 import { Form, Row, Button } from "react-bootstrap";
 
 export default class UpdateAttendance extends Component {
@@ -15,7 +15,7 @@ export default class UpdateAttendance extends Component {
       regdno: "",
     };
     this.changeAttendHandler = this.changeAttendHandler.bind(this);
-    this.changeHosteTypelHandler = this.changeHostelTypeHandler.bind(this);
+    this.changeHostelTypeHandler = this.changeHostelTypeHandler.bind(this);
     this.changeNameHandler = this.changeNameHandler.bind(this);
     this.changeRoomnoHandler = this.changeRoomnoHandler.bind(this);
     this.changeRegdnoHandler = this.changeRegdnoHandler.bind(this);
@@ -23,7 +23,7 @@ export default class UpdateAttendance extends Component {
   }
 
   componentDidMount() {
-    StudentService.getAttendanceById(this.state.id).then((res) => {
+    Service.getAttendanceById(this.state.id).then((res) => {
       let attendance = res.data;
       this.setState({
         attend: attendance.attend,
@@ -46,7 +46,7 @@ export default class UpdateAttendance extends Component {
     };
     console.log("attendance =>" + JSON.stringify(attendance));
     console.log("id =>" + JSON.stringify(this.state.id));
-    StudentService.updateAttendance(attendance, this.state.id).then((res) => {
+    Service.updateAttendance(attendance, this.state.id).then((res) => {
       this.props.history.push("/AttendaceTable");
     });
   };
@@ -89,6 +89,7 @@ export default class UpdateAttendance extends Component {
                       value={this.state.attend}
                       onChange={this.changeAttendHandler}
                     >
+                      {/* <option>Choose..</option> */}
                       <option>Present</option>
                       <option>Absent</option>
                       </Form.Select>
@@ -101,6 +102,7 @@ export default class UpdateAttendance extends Component {
                       value={this.state.hostelType}
                       onChange={this.changeHostelTypeHandler}
                     >
+                      {/* <option>Choose..</option> */}
                       <option>AC</option>
                       <option>NON-AC</option>
                       </Form.Select>

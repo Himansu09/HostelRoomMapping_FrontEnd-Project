@@ -2,7 +2,6 @@ import axios from "axios";
 import authHeader from "./auth-header";
 
 const HOSTEL_API_BASE_URL = "http://localhost:8080/api/v1/hostels";
-const URL_ATT = "http://localhost:8080/attendance/addpre";
 
 console.log("backend connected" + HOSTEL_API_BASE_URL);
 
@@ -31,31 +30,6 @@ class StudentService {
   // Delete
   deleteHostel(hostelId) {
     return axios.delete(HOSTEL_API_BASE_URL + "/" + hostelId, {
-      headers: authHeader(),
-    });
-  }
-
-  getAttendance() {
-    return axios.get(URL_ATT, { headers: authHeader() });
-  }
-
-  createAttendance(attendance) {
-    return axios.post(URL_ATT, attendance, { headers: authHeader() });
-  }
-  createAttendance(attendance) {
-    return axios.post(URL_ATT, attendance, { headers: authHeader() });
-  }
-  getAttendanceById(attendanceId) {
-    return axios.get(URL_ATT + "/" + attendanceId, { headers: authHeader() });
-  }
-
-  updateAttendance(attendance, attendanceId) {
-    return axios.put(URL_ATT + "/" + attendanceId, attendance, {
-      headers: authHeader(),
-    });
-  }
-  deleteAttendance(attendanceId) {
-    return axios.delete(URL_ATT + "/" + attendanceId, {
       headers: authHeader(),
     });
   }
