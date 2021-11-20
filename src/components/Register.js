@@ -9,7 +9,7 @@ import { isEmail } from "validator";
 import { AiOutlineUser } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { HiOutlineMail } from "react-icons/hi";
-
+import proImg from "../image/Devices-amico.png";
 import { register } from "../actions/auth";
 import "../index.css";
 const required = (value) => {
@@ -101,9 +101,9 @@ const Register = () => {
     <div className="container col-md-12 back">
       <div className="card card1 card-container shadow-lg">
         <img
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+          src={proImg}
           alt="profile-img"
-          className="profile-img-card"
+          className="d-inline-block w-100 h-100"
         />
 
         <Form onSubmit={handleRegister} ref={form}>
